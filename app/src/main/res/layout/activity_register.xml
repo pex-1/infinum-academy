@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:maxWidth="@dimen/max_width"
+    android:layout_gravity="center"
+    android:id="@+id/registerCoordinatorLayoutSnackbar"
+    tools:context=".ui.register.RegisterActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/registerProgressBar"
+        style="@style/cardViewLoading"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <infinum.academy2019.shows_danijel_pecek.ProgressBarView
+            android:layout_width="@dimen/progress_bar_size"
+            android:layout_height="@dimen/progress_bar_size"
+            android:layout_gravity="center" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Register" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/usernameInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_2x"
+        android:layout_marginTop="@dimen/spacing_2x"
+        android:layout_marginEnd="@dimen/spacing_2x"
+        app:errorEnabled="true"
+        app:errorTextAppearance="@style/warning_style"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbarRegister">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/usernameEditTextRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/username"
+            android:textSize="@dimen/text_input_size"
+            android:theme="@style/EditTextTheme" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_2x"
+        android:layout_marginEnd="@dimen/spacing_2x"
+        android:hint="@string/password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usernameInputLayout"
+        app:passwordToggleDrawable="@drawable/password_selector"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/main_color">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordEditTextRegister"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_input_height"
+            android:inputType="textPassword"
+            android:textSize="@dimen/text_input_size"
+            android:theme="@style/EditTextTheme" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordRepeatLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_2x"
+        android:layout_marginEnd="@dimen/spacing_2x"
+        android:hint="@string/password_again"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/passwordInputLayout"
+        app:passwordToggleDrawable="@drawable/password_selector"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/main_color">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/repeatPasswordEditTextRegister"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_input_height"
+            android:inputType="textPassword"
+            android:textSize="@dimen/text_input_size"
+            android:theme="@style/EditTextTheme" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        style="@style/CustomButton"
+        android:id="@+id/registerButton"
+        android:layout_marginTop="@dimen/register_button_top_margin"
+        android:enabled="false"
+        android:text="@string/register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/passwordRepeatLayout" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
